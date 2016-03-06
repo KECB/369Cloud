@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<application id="706057138895847424">
+  <name>DemoApp</name>
+  <description>展示369cloud各个特性。</description>
+  <author>
+    <name>名字</name>
+    <email>邮箱</email>
+    <tel>电话</tel>
+    <address>永嘉北路6号</address>
+  </author>
+  <license url=""/>
+  <version>01.00.006</version>
+  <entry>main</entry>
+  <bgcolor>#00FFFFFF</bgcolor>
+  <appkey>key</appkey>
+  <logServer>169.254.166.58</logServer>
+  <logPort>40050</logPort>
+</application>

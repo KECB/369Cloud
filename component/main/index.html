@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,initial-scale=1.0">
+		<title></title>
+	    <link rel="stylesheet" type="text/css" href="../common/css/aui.css" />
+	</head>
+	<body>
+        <header class="aui-bar aui-bar-nav aui-bar-primary" id="header">TEST</header>
+	</body>
+	<script src="../common/co/native.js"></script>
+	<script src="../common/co/dom.js"></script>
+	<script src="../common/co/co.js"></script>
+	<script>
+		var view = app.currentView();
+       	domReady(function(require){
+       		if($.os.ios){
+				app.setStatusBarBackgroundColor('#1abc9c');
+				app.statusBarFontColor(1);
+			}else if($.os.android){
+			}
+       		var y = $('#header').height();
+       		var pop = view.createPopover(0,y,0,0);
+//     		rd.window.openPopover('pop',rd.window.WEBVIEW_LOCAL_RELATIVE_PATH,'index_content.html',{x:0,y:y,width:0,height:0});
+       		pop.open('index_content.html');
+		});
+	</script>
+</html>

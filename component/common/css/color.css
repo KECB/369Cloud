@@ -1,0 +1,114 @@
+.c-blu{
+    background-color: #5C78FD;
+}
+.c-ligBlu{
+    background-color: #DDEEFD;
+}
+.c-ligBlu1{
+    background-color: #BFDFFF;
+}
+.c-wh{
+    background-color: #ffffff;
+}
+.c-bla{
+    background-color: #000000;
+}
+.c-gre{
+    background-color: #31c926;
+}
+.c-ligGre{
+    background-color: #D7FFE7;
+}
+.c-ligGre1{
+    background-color: #B4FDD0;
+}
+.c-red{
+    background-color: #fd6162;
+}
+.c-ligRed{
+    background-color: #FFDFE0;
+}
+.c-ligRed1{
+    background-color: #FFC5C3;
+}
+.c-graBlu{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#38DEF4 ), color-stop(36%, #5BC2F6 ), to(#6CB3FB ));
+    background-image: -webkit-linear-gradient(top, #38DEF4 0%,#5BC2F6 36%,  #6CB3FB 100%);
+    background-image: linear-gradient(top, #38DEF4 0%,#5BC2F6 36%,  #6CB3FB 100%);
+}
+.c-graRed{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFAA9A ), color-stop(36%, #FE8980 ), to(#FD6162 ));
+    background-image: -webkit-linear-gradient(top, #FFAA9A 0%,#FE8980 36%,  #FD6162 100%);
+    background-image: linear-gradient(top, #FFAA9A 0%,#FE8980 36%,  #FD6162 100%);
+}
+.c-graPur{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#691FA3 ), color-stop(36%, #873CEE ), to(#6554E5 ));
+    background-image: -webkit-linear-gradient(top, #691FA3 0%,#873CEE 36%,  #6554E5 100%);
+    background-image: linear-gradient(top, #691FA3 0%,#873CEE 36%,  #6554E5 100%);
+}
+.c-graPin{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#A45B67 ), color-stop(36%, #F97D96 ), to(#FF6D92 ));
+    background-image: -webkit-linear-gradient(top, #A45B67 0%,#F97D96 36%,  #FF6D92 100%);
+    background-image: linear-gradient(top, #A45B67 0%,#F97D96 36%,  #FF6D92 100%);
+}
+.t-wh{
+    color: #ffffff !important;
+}
+.t-gra{
+    color: #9D9D9D;
+}
+.t-blu{
+    color: #0000ff;
+}
+.t-blu1{
+    color: #00ffff;
+}
+.t-red{
+    color: #ff0000;
+}
+.t-yel{
+    color: #fffe00;
+}
+.t-gre{
+    color: #00ff00;
+}
+.t-pur{
+    color: #ff00ff;
+}
+
+.t-9a9{
+    color: #9a9a9a;
+}
+.t-d4d{
+    color: #d4d2ce;
+}
+.t-363{
+    color: #363636;
+}
+.t-5c7{
+    color: #5C78FD;
+}
+.b-wh{
+    border-color: #ffffff !important;
+}
+.b-gra{
+    border-color: #9D9D9D;
+}
+.b-blu{
+    border-color: #0000ff;
+}
+.b-blu1{
+    border-color: #00ffff;
+}
+.b-red{
+    border-color: #ff0000;
+}
+.b-yel{
+    border-color: #fffe00;
+}
+.b-gre{
+    border-color: #00ff00;
+}
+.b-pur{
+    border-color: #ff00ff;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,initial-scale=1.0">
+		<title></title>
+	    <link rel="stylesheet" type="text/css" href="../common/css/aui.css" />
+	</head>
+	<body>
+        <header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
+		    <a class="aui-pull-left" id="back">
+		        <span class="aui-iconfont aui-icon-left"></span>
+		    </a>
+		    <div class="aui-title">app</div>
+		</header>
+	</body>
+	<script src="../common/co/native.js"></script>
+	<script src="../common/co/dom.js"></script>
+	<script src="../common/co/co.js"></script>
+	<script>
+		var view = app.currentView();
+       	domReady(function(require){
+       		if($.os.ios){
+				app.setStatusBarBackgroundColor('#1abc9c');
+				app.statusBarFontColor(1);
+			}else if($.os.android){
+			}
+       		if($.os.ios){
+				app.setStatusBarBackgroundColor('#1abc9c');
+				app.statusBarFontColor(1);
+			}else if($.os.android){
+			}
+       		var y = $('#header').height();
+       		var body_h = $('body').height();
+       		var height = body_h-y;
+       		var pop = view.createPopover(0,y,0,height);
+       		pop.open('app_pop.html');
+       		// 返回上一层
+       		$("#back").on("tap",function(){
+				var view = app.currentView();
+				view.back();
+			})
+		});
+	</script>
+</html>

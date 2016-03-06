@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,initial-scale=1.0">
+		<title></title>
+	    <link rel="stylesheet" type="text/css" href="../common/css/aui.css" />
+	    <style type="text/css">
+		#result{
+			width: 300px;
+			padding: 10px;
+			margin: 0 auto;
+			border: 1px solid #ff9900;
+			height: 200px;
+			background: #ffffff;
+			word-break: break-all;
+		}
+	    </style>
+	</head>
+	<body>
+        <section class="aui-content">
+	        <ul class="aui-list-view">
+	            <li class="aui-list-view-cell">
+	                <a class="aui-arrow-right">获取引擎版本号</a>
+	            </li>
+	            <li class="aui-list-view-cell">
+	                <a class="aui-arrow-right">获取app配置信息</a>
+	            </li>
+	            <li class="aui-list-view-cell">
+	                <a class="aui-arrow-right">判断app是否全屏显示</a>
+	            </li>
+	            <li class="aui-list-view-cell">
+	                <a class="aui-arrow-right">设置状态栏背景颜色</a>
+	            </li>
+	            <li class="aui-list-view-cell">
+	                <a class="aui-arrow-right">清空cache目录</a>
+	            </li>
+	        </ul>
+        </section>
+        <p class="aui-text-center aui-text-danger">结果</p>
+        <section class="aui-content-padded" id="result"></section>
+	</body>
+	<script src="../common/co/native.js"></script>
+	<script src="../common/co/dom.js"></script>
+	<script src="../common/co/co.js"></script>
+	<script>
+       	domReady(function(require){
+       		$(".aui-list-view > li").on("tap", function(event){
+				var index = $(this).index();
+				if(index==0){
+					var engineVersion = rd.app.getEngineVersion();
+					$("#result").text("当前引擎版本号："+engineVersion);
+				}else if(index==1){
+					var result = rd.app.getApplicationInfo();
+					$("#result").text(JSON.stringify(result));
+				}else if(index==2){
+					var result = rd.app.isFullScreen();
+					$("#result").text(result);
+				}else if(index==3){
+					rd.app.setStatusBarBackgroundColor('#FFFFFF');
+				}else if(index==4){
+					rd.app.cleanCache();
+				}
+			});
+		});
+	</script>
+</html>

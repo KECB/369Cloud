@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,initial-scale=1.0">
+		<title></title>
+	    <link rel="stylesheet" type="text/css" href="../common/css/aui.css" />
+	    <style type="text/css">
+		.aui-content-padded {
+	    	margin-top: 30px;
+	    }
+		#result{
+			width: 300px;
+			margin: 0 auto;
+			padding: 10px;
+			border: 1px solid #ff9900;
+			height: 200px;
+			background: #ffffff;
+			word-break: break-all;
+		}
+	    </style>
+	</head>
+	<body>
+        <header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
+		    <a class="aui-pull-left" id="back">
+		        <span class="aui-iconfont aui-icon-left"></span>
+		    </a>
+		    <div class="aui-title">accelerometer</div>
+		</header>
+		<section class="aui-content-padded">
+			Contacts模块管理系统通讯录，用于可对系统通讯录进行增、删、改、查等操作。
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-block aui-btn-warning" id="getAddressBook">获取通讯录</div>
+		</section>
+		<p class="aui-text-center aui-text-danger">结果</p>
+        <section class="aui-content-padded" id="result"></section>
+	</body>
+	<script src="../common/co/native.js"></script>
+	<script src="../common/co/dom.js"></script>
+	<script src="../common/co/co.js"></script>
+	<script>
+       	domReady(function(require){
+       		if($.os.ios){
+				app.setStatusBarBackgroundColor('#1abc9c');
+				app.statusBarFontColor(1);
+			}else if($.os.android){
+			}
+			$("#back").on("tap",function(){
+				var view = app.currentView();
+				view.back(); //返回上一层
+			})
+			$("#getAddressBook").on("tap",function(){
+				var addressBook = app.contacts.getAddressBook(0);
+
+			})
+		});
+	</script>
+</html>

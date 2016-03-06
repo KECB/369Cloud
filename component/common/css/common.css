@@ -1,0 +1,350 @@
+html{
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height:100%;
+    overflow-x: hidden;
+    -webkit-user-select:none;
+    user-select:none;
+    -webkit-text-size-adjust:none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute !important;
+    border: 0;
+    font-size: 1em;
+}
+
+header,#header, #footer {
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    position: relative;
+}
+#footer{
+	border-top:1px solid #c8c8c8;
+}
+ul, li {
+    list-style: none;
+}
+
+span{
+    display: block !important;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+a:active {
+  color: #0062cc;
+}
+
+a,p,div,ul,li,nav,span,img,header {
+    outline: 0 !important;
+    -webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+    position: relative;
+}
+
+div,p{
+    line-height:1.2em;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+button, html input[type="button"],input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+.btn{
+	margin: 0;
+  	font: inherit;
+  	color: inherit;
+  	overflow: visible;
+  	text-transform: none;
+}
+
+.uinput input, .uinput textarea {
+    margin: 0px;
+    border: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    padding: .4em 0;
+    line-height: 1.2em;
+    background: none;
+    text-decoration: none;
+    font-size: 1em;
+    display: block;
+}
+
+.ui-radio input[type="radio"], .ui-checkbox input[type="checkbox"] {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 0;
+  outline: 0 !important;
+  font-size: 1em;
+}
+
+.ui-radio input[type="radio"]:before, .ui-checkbox input[type="checkbox"]:before {
+  display: inline-block;
+  font-size: 1.8em;
+  font-weight: normal;
+  line-height: 1;
+  color: rgba(212,212,212,.8);
+  text-decoration: none;
+  background: none;
+  border-radius: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ui-radio input[type="radio"]:checked:before, .ui-checkbox input[type="checkbox"]:checked:before {
+  color: #007aff;
+}
+
+.wid{
+    width:100%;
+}
+.hei{
+    height: 100%;
+}
+
+.br-a {
+    -webkit-border-radius: 0.3em;
+    border-radius: 0.3em;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+.br-t {
+    -webkit-border-top-left-radius: 0.3em;
+    border-top-left-radius: 0.3em;
+    -webkit-border-top-right-radius: 0.3em;
+    border-top-right-radius: 0.3em
+}
+.br-a1 {
+    -webkit-border-radius: 0.4em;
+    border-radius: 0.4em
+}
+.br-a2 {
+    -webkit-border-radius: .6em;
+    border-radius: .6em
+}
+.br-a3 {
+    -webkit-border-radius: 1.2em;
+    border-radius: 1.2em
+}
+.bor-a{
+    border: 1px solid;
+}
+.bor-b{
+    border-bottom: 1px solid;
+}
+.bor-t{
+    border-top: 1px solid;
+}
+
+.font0 {
+    font-size: 1.0em !important;
+}
+.font1 {
+    font-size: 1.0625em !important;
+}
+.font2 {
+    font-size: 1.2em !important;
+}
+
+.font3 {
+    font-size: 1.5em !important;
+}
+
+.font-1 {
+    font-size: 0.8125em !important;
+}
+.font-2 {
+    font-size: 0.75em !important;
+}
+.font-3 {
+    font-size: 0.625em !important;
+}
+.font-wei{
+    font-weight: bold;
+}
+.omit{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.omit1 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.line1 {
+    -webkit-line-clamp: 1;
+}
+.line2 {
+    -webkit-line-clamp: 2;
+}
+.line3 {
+    -webkit-line-clamp: 3;
+}
+
+.padd-a {
+    padding: 0.5em;
+    margin: 0;
+}
+.padd-l{
+	padding-left: 0.5em;
+    margin: 0;
+}
+.padd-r{
+	padding-right: 0.5em;
+    margin: 0;
+}
+.padd-t{
+	padding-top: 0.5em;
+    margin: 0;
+}
+.padd-b{
+	padding-bottom: 0.5em;
+    margin: 0;
+}
+.padd-h {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap !important;
+	outline: 0 !important;
+    padding: .8em 1em;
+    margin: 0;
+}
+
+.mar-a {
+    margin: 0.4em;
+}
+.mar-l{
+    margin-left: 0.4em;
+}
+.mar-r{
+    margin-right: 0.4em;
+}
+.mar-t{
+    margin-top: 0.4em;
+}
+.mar-b{
+    margin-bottom: 0.4em;
+}
+.mwh{
+    min-width: 2em;
+    min-height: 1.2em;
+}
+.mwh1 {
+    min-width: 1em;
+    min-height: 1em;
+}
+.mwh2 {
+    min-width: 2em;
+    min-height: 2em;
+}
+.mwh4-2 {
+    min-width: 3em;
+    min-height: 2em;
+}
+.tx-l {
+    text-align: left;
+}
+.tx-r {
+    text-align: right;
+}
+.tx-c {
+    text-align: center;
+}
+
+.ut-s {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap !important;
+    outline: 0 !important
+}
+
+.ut-m {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal !important;
+    outline: 0 !important
+}
+
+.uhide {
+    display: none !important;
+}
+
+.uof {
+    overflow: hidden;
+}
+.uof-x {
+    overflow-x: hidden;
+}
+.uof-y {
+    overflow-y: hidden;
+}
+
+.tra {
+    -webkit-transition: all 300ms ease-in 100ms
+}
+
+.ani {
+    transform: scale(.95,.95);
+    -webkit-transform: scale(.95,.95);
+    transition:all .3s linear;
+    -webkit-transition: all .3s linear;
+    opacity: .8;
+}
+
+.ios7 #header,.ios7 header {
+    padding: 1em 0 0;
+}
+
+/*把图像扩展至宽度和高度完全适应内容区域*/
+.bg-img
+{
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+}
+/*把图像扩展至完全覆盖内容区域，某些部分会超出无法显示*/
+.bg-img1
+{   
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+/*把图像X轴方向完全撑开，Y轴方向自适应*/
+.bg-img2
+{
+    background-repeat:no-repeat;
+    background-size:100% auto;
+    background-position:center;
+}
+/*把图像Y轴方向完全撑开，X轴方向自适应*/
+.bg-img3
+{
+    background-repeat:no-repeat;
+    background-size:auto 100%;
+    background-position:center;
+}
+/*把图像X轴、Y轴方向都完全撑开*/
+.bg-img4
+{
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    background-position:center;
+}

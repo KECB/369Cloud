@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,initial-scale=1.0">
+		<title></title>
+	    <link rel="stylesheet" type="text/css" href="../common/css/aui.css" />
+	    <style type="text/css">
+		.aui-content-padded {
+	    	margin-top: 30px;
+	    }
+		#result{
+			width: 300px;
+			margin: 0 auto;
+			padding: 10px;
+			border: 1px solid #ff9900;
+			height: 200px;
+			background: #ffffff;
+			word-break: break-all;
+		}
+		.aui-btn {
+			margin-bottom: 15px;
+		}
+	    </style>
+	</head>
+	<body>
+        <header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
+		    <a class="aui-pull-left" id="back">
+		        <span class="aui-iconfont aui-icon-left"></span>
+		    </a>
+		    <div class="aui-title">accelerometer</div>
+		</header>
+		<section class="aui-content-padded">
+			Accelerometer模块管理设备加速度传感器，用于获取感应手机的运动的信息，包括x（屏幕水平方向）、y（垂直屏幕水平方向）、z（垂直屏幕平面方向）三个方向的加速度信息。
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-block aui-btn-warning" id="getCurrentAcceleration">获取当前设备的加速度信息</div>
+			<div class="aui-btn aui-btn-block aui-btn-warning" id="watchAcceleration">监听设备加速度变化信息</div>
+			<div class="aui-btn aui-btn-block aui-btn-warning" id="clearWatch ">关闭监听设备加速度信息</div>
+		</section>
+		<p class="aui-text-center aui-text-danger">结果</p>
+        <section class="aui-content-padded" id="result"></section>
+	</body>
+	<script src="../common/co/native.js"></script>
+	<script src="../common/co/dom.js"></script>
+	<script src="../common/co/co.js"></script>
+	<script>
+       	domReady(function(require){
+       		if($.os.ios){
+				app.setStatusBarBackgroundColor('#1abc9c');
+				app.statusBarFontColor(1);
+			}else if($.os.android){
+			}
+			$("#back").on("tap",function(){
+				var view = app.currentView();
+				view.back(); //返回上一层
+			})
+			// 获取当前设备的加速度信息
+			$("#getCurrentAcceleration").on("tap",function(){
+				app.accelerometer.getCurrentAcceleration(function(acceleration) {
+			       $("#result").text(JSON.stringify(acceleration.xAxis));
+			       //获取当前设备x轴方向的加速度，浮点型数据，与物理学中的加速度值一致。
+			   },function(err){
+			       $("#result").text(JSON.stringify(err));
+			   })
+			})
+			$("#watchAcceleration").on("tap",function(){
+				 app.accelerometer.watchAcceleration(function(acceleration) {
+				       $("#result").text(JSON.stringify(acceleration.xAxis));
+				       //获取当前设备x轴方向的加速度，浮点型数据，与物理学中的加速度值一致。
+				   }, function(err) {
+				       $("#result").text(JSON.stringify(err));
+				   }, {
+				       frequency: 400
+				   })
+			})
+			$("#clearWatch").on("tap",function(){
+				app.accelerometer.clearWatch();
+				$("#result").text('已关闭监听');
+			})
+		});
+	</script>
+</html>
