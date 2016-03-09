@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="../../../common/css/aui.css">
+		<title></title>
+		<style type="text/css">
+		.aui-content-padded {
+			margin-top: 10px;
+		}
+		#result{
+			width: 300px;
+			margin: 0 auto;
+			padding: 10px;
+			border: 1px solid #ff9900;
+			height: 200px;
+			background: #ffffff;
+			word-break: break-all;
+		}
+	    </style>
+	</head>
+	<body>
+		<header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
+		    <a class="aui-pull-left" id="back">
+		        <span class="aui-iconfont aui-icon-left"></span>
+		    </a>
+		    <div class="aui-title">全局通用信息获取相关方法</div>
+		</header>
+		<section class="aui-content-padded">
+			
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-danger" id="btn_alert_sample_1">获取app配置信息，来自application.xml</div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-danger" id="btn_alert_sample_2">通过名字获取模块信息</div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-danger" id="btn_alert_sample_3">获取当前模块信息</div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-danger" id="btn_alert_sample_4">获取设备模型名称</div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-danger" id="btn_alert_sample_5">获取引擎版本号</div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-danger" id="btn_alert_sample_6">获取主component的componentInfo</div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-danger" id="btn_alert_sample_7">获取系统名称</div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-danger" id="btn_alert_sample_8">获取系统版本</div>
+		</section>
+		<p class="aui-text-center aui-text-danger">结果</p>
+        <section class="aui-content-padded" id="result"></section>
+	</body>
+	<script src="../../../common/co/native.js"></script>
+	<script src="../../../common/co/dom.js"></script>
+	<script src="../../../common/co/co.js"></script>
+	<script>
+
+       	domReady(function(require){
+       		
+       		$("#btn_alert_sample_1").on("tap", function(){
+       			var appInfo = app.getApplicationInfo();
+       			$("#result").text(JSON.stringify(appInfo));
+       		});
+       		$("#btn_alert_sample_2").on("tap", function(){
+       			var info = app.getComponentInfoByName("common");
+       			$("#result").text(JSON.stringify(info));
+       		});
+       		$("#btn_alert_sample_3").on("tap", function(){
+				var info = app.getCurrentComponentInfo();
+       			$("#result").text(JSON.stringify(info));
+       		});
+       		$("#btn_alert_sample_4").on("tap", function(){
+       			var dName = app.getDeviceName();
+       			$("#result").text(JSON.stringify(dName));
+       		});
+       		$("#btn_alert_sample_5").on("tap", function(){
+				var version = app.getEngineVersion() //获取引擎版本号
+				$("#result").text(JSON.stringify(version));
+       		});
+       		$("#btn_alert_sample_6").on("tap", function(){
+				 var info = app.getMainComponentInfo();
+				$("#result").text(JSON.stringify(info));
+       		});
+       		$("#btn_alert_sample_7").on("tap", function(){
+				var name = app.getPlatformName();
+				$("#result").text(JSON.stringify(name));
+       		});
+       		$("#btn_alert_sample_8").on("tap", function(){
+				var version = app.getPlatformVersion();
+				$("#result").text(JSON.stringify(version));
+       		});
+       		
+			// 返回上一层
+       		$("#back").on("tap",function(){
+				var view = app.currentView();
+				view.back();
+			})
+		});
+		
+	</script>
+</html>
