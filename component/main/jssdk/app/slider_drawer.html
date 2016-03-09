@@ -30,6 +30,12 @@
 	        </div>
 		</section>
 		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-primary" id="btn_open_left_drawer">打开左侧drawer</div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-primary" id="btn_open_right_drawer">打开右侧drawer</div>
+		</section>
+		<section class="aui-content-padded">
 			<div class="aui-btn aui-btn-primary" id="btn_close_drawer">关闭drawer</div>
 		</section>
 	</body>
@@ -54,6 +60,12 @@
        								'right',
        								isNaN(width)?200:width);
        		});
+       		$("#btn_open_left_drawer").on("tap", function(){
+       			app.openLeftSlideDrawer();
+   			});
+   			$("#btn_open_right_drawer").on("tap", function(){
+       			app.openRightSlideDrawer();
+   			});
        		$("#btn_close_drawer").on("tap", function(){
        			app.closeSlideDrawer();
    			});
