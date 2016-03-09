@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="../../../common/css/aui.css">
+		<title></title>
+		<style type="text/css">
+		.aui-content-padded {
+			margin-top: 20px;
+		}
+	    </style>
+	</head>
+	<body>
+		<header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
+		    <a class="aui-pull-left" id="back">
+		        <span class="aui-iconfont aui-icon-left"></span>
+		    </a>
+		    <div class="aui-title">app状态栏控制</div>
+		</header>
+		<section class="aui-content-padded">
+			<div class="aui-input-row aui-warning">
+            	<i class="aui-input-addon aui-iconfont aui-icon-warnfill"></i>
+            	<label>目前发现app背景栏颜色存在bug，  导致被隐藏的statusbar一直覆盖在menubar上。</label>
+        	</div>	
+		</section>
+		<section class="aui-content-padded">
+			Android要求版本4.4以上。		
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-info" id="btn_set_background_color">
+			    	设置app状态栏背景颜色，默认黑色
+			</div>
+		</section>
+		<section class="aui-content-padded">
+			仅iOS，0 表示黑色；1 表示白色
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-info" id="btn_set_font_color">设置当前页面状态栏文字颜色</div>
+		</section>
+	</body>
+	<script src="../../../common/co/native.js"></script>
+	<script src="../../../common/co/dom.js"></script>
+	<script src="../../../common/co/co.js"></script>
+	<script>
+		var currentFontColor = 1;
+       	domReady(function(require){
+       		
+       		$("#btn_set_background_color").on("tap", function(){
+       			app.setStatusBarBackgroundColor('#3498db');
+       		});
+       		$("#btn_set_font_color").on("tap", function(){
+       			app.statusBarFontColor(currentFontColor)//设置当前页面状态栏文字为白色(iOS)
+       			currentFontColor = currentFontColor==1?0:1;
+       		});
+       		
+			// 返回上一层
+       		$("#back").on("tap",function(){
+				var view = app.currentView();
+				view.back();
+			})
+		});
+		
+	</script>
+</html>

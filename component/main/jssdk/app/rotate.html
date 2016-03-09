@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="../../../common/css/aui.css">
+		<title></title>
+		<style type="text/css">
+		.aui-content-padded {
+			margin-top: 20px;
+		}
+	    </style>
+	</head>
+	<body>
+		<header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
+		    <a class="aui-pull-left" id="back">
+		        <span class="aui-iconfont aui-icon-left"></span>
+		    </a>
+		    <div class="aui-title">解锁屏幕翻转</div>
+		</header>
+		
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-primary" id="btn_unlock_rotate">解锁翻转</div>
+		</section>
+	</body>
+	<script src="../../../common/co/native.js"></script>
+	<script src="../../../common/co/dom.js"></script>
+	<script src="../../../common/co/co.js"></script>
+	<script>
+
+       	domReady(function(require){
+       		
+       		$("#btn_unlock_rotate").on("tap", function(){
+       			app.unLockRotate()
+       		});
+       		
+			// 返回上一层
+       		$("#back").on("tap",function(){
+				var view = app.currentView();
+				view.back();
+			})
+		});
+		
+	</script>
+</html>

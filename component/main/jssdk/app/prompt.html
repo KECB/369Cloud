@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="../../../common/css/aui.css">
+		<title></title>
+		<style type="text/css">
+		.aui-content-padded {
+			margin-top: 20px;
+		}
+	    </style>
+	</head>
+	<body>
+		<header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
+		    <a class="aui-pull-left" id="back">
+		        <span class="aui-iconfont aui-icon-left"></span>
+		    </a>
+		    <div class="aui-title">弹出带两个或三个按钮和输入框的对话框</div>
+		</header>
+		<section class="aui-content-padded">
+			<div class="aui-input-row aui-warning">
+            	<i class="aui-input-addon aui-iconfont aui-icon-warnfill"></i>
+            	<label>参数不全的情况下，存在bug，测试全面后会给出bug报告。</label>
+        	</div>	
+		</section>
+		<section class="aui-content-padded">
+			暂时不知道如何修改样式，所以不建议使用。
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-info" id="btn_alert_sample_1">弹出无回调函数多按钮prompt对话框</div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-info" id="btn_alert_sample_2">弹出默认多按钮prompt对话框</div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-info" id="btn_alert_sample_3">弹出带title多按钮prompt对话框</div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-info" id="btn_alert_sample_4">弹出带title,btnCaptions多按钮prompt对话框</div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-info" id="btn_alert_sample_5">弹出带title,btnCaptions,inputValue多按钮prompt对话框</div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-info" id="btn_alert_sample_6">弹出带title,btnCaptions,inputValue,inputTpye多按钮prompt对话框</div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-info" id="btn_alert_sample_7">JSON参数弹出默认多按钮prompt对话框</div>
+		</section>
+		
+	</body>
+	<script src="../../../common/co/native.js"></script>
+	<script src="../../../common/co/dom.js"></script>
+	<script src="../../../common/co/co.js"></script>
+	<script>
+
+       	domReady(function(require){
+       		
+       		$("#btn_alert_sample_1").on("tap", function(){
+       			app.prompt('弹出无回调函数多按钮prompt对话框');
+       		});
+       		$("#btn_alert_sample_2").on("tap", function(){
+				app.prompt('弹出默认多按钮prompt对话框', function(buttonIndex,text,err) {
+					alert("按钮index："+buttonIndex+";输入的文字："+text);
+				});
+       		});
+       		$("#btn_alert_sample_3").on("tap", function(){
+				app.prompt('弹出带title多按钮prompt对话框', 'title', 'inputValue', 'text', function(buttonIndex,text,err) {
+					alert("按钮index："+buttonIndex+";输入的文字："+text);
+				});
+       		});
+       		$("#btn_alert_sample_4").on("tap", function(){
+       			app.prompt('弹出带title,btnCaptions多按钮prompt对话框', 'title', ['按钮1', '按钮2', '按钮3'], 'inputValue', 'text', function(buttonIndex,text,err) {
+					alert("按钮index："+buttonIndex+";输入的文字："+text);
+			    });
+       		});
+       		$("#btn_alert_sample_5").on("tap", function(){
+       			app.confirm('弹出带title,btnCaptions,inputValue多按钮prompt对话框', 'title', ['按钮1', '按钮2', '按钮3'], 'inputValue', 'text', function(buttonIndex,text,err) {
+					alert("按钮index："+buttonIndex+";输入的文字："+text);
+			    });
+       		});
+       		$("#btn_alert_sample_6").on("tap", function(){
+       			app.confirm('弹出带title,btnCaptions,inputValue,inputTpye多按钮prompt对话框', 'title', ['按钮1', '按钮2', '按钮3'], 'inputValue', 'text', function(buttonIndex) {
+					alert("按钮index："+buttonIndex+";输入的文字："+text);
+			    });
+       		});
+       		$("#btn_alert_sample_7").on("tap", function(){
+				app.prompt({
+       				message: 'JSON参数弹出默认多按钮prompt对话框',
+			       	title: 'JSON',
+			       	btnCaptions: ['按钮1', '按钮2', '按钮3'],
+			       	inputValue: 'inputValue',
+			       	inputTpye: 'text',
+			       	callback: function(buttonIndex,text,err) {
+			        	alert("按钮index："+buttonIndex+";输入的文字："+text);
+					}
+   				});
+       		});
+       		
+			// 返回上一层
+       		$("#back").on("tap",function(){
+				var view = app.currentView();
+				view.back();
+			})
+		});
+		
+	</script>
+</html>
