@@ -1,8 +1,8 @@
 #369Cloud Demo
 
 ####集成JS-SDK、扩展功能、网络通讯及系统功能便于初学者学习使用
-![](doc/img/demo-home.jpg "")
-![](doc/img/demo-jssdk-app.jpg "")
+![](doc/img/demo-home.png "")
+![](doc/img/demo-jssdk-app.png "")
 ![](doc/img/demo-accelerator.jpg "")
 ![](doc/img/demo-actionsheet.jpg "")
 ![](doc/img/demo-camera.jpg "")
