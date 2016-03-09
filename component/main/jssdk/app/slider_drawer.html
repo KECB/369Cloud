@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="../../../common/css/aui.css">
+		<title></title>
+		<style type="text/css">
+		.aui-content-padded {
+			margin-top: 20px;
+		}
+	    </style>
+	</head>
+	<body>
+		<header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
+		    <a class="aui-pull-left" id="back">
+		        <span class="aui-iconfont aui-icon-left"></span>
+		    </a>
+		    <div class="aui-title">Slider Drawer</div>
+		</header>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-primary" id="btn_add_left_drawer">添加左侧drawer</div>
+		    <div class="aui-input-row">
+	            <input id="et_left_width" class="aui-input" placeholder="number"  type="text"/>
+	        </div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-primary" id="btn_add_right_drawer">添加右侧drawer</div>
+		    <div class="aui-input-row">
+	            <input id="et_right_width" class="aui-input" placeholder="number"  type="text"/>
+	        </div>
+		</section>
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-primary" id="btn_close_drawer">关闭drawer</div>
+		</section>
+	</body>
+	<script src="../../../common/co/native.js"></script>
+	<script src="../../../common/co/dom.js"></script>
+	<script src="../../../common/co/co.js"></script>
+	<script>
+
+       	domReady(function(require){
+       		
+       		//左侧drawer
+       		$("#btn_add_left_drawer").on("tap", function(){
+       			
+       			var width= parseInt($("#et_left_width").attr("value"));
+       			app.addSlideDrawer('jssdk/app/drawer.html',
+       								'left',
+       								isNaN(width)?200:width);
+       		});
+       		$("#btn_add_right_drawer").on("tap", function(){
+       			var width= parseInt($("#et_right_width").attr("value"));
+       			app.addSlideDrawer('jssdk/app/drawer_right.html',
+       								'right',
+       								isNaN(width)?200:width);
+       		});
+       		$("#btn_close_drawer").on("tap", function(){
+       			app.closeSlideDrawer();
+   			});
+//     		app.addSlideDrawer('jssdk/app/drawer.html', 'left', 200);
+//			app.addSlideDrawer('jssdk/app/drawer.html', 'right', 200);
+
+			// 返回上一层
+       		$("#back").on("tap",function(){
+				var view = app.currentView();
+				view.back();
+			})
+		});
+		
+	</script>
+</html>

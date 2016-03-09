@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../common/css/aui.css" />
+	    <style type="text/css">
+		#result{
+			width: 300px;
+			padding: 10px;
+			margin: 0 auto;
+			border: 1px solid #ff9900;
+			height: 200px;
+			background: #ffffff;
+			word-break: break-all;
+		}
+	    </style>
+	</head>
+	<body>
+	    <header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
+		    <a class="aui-pull-left" id="back">
+		        <span class="aui-iconfont aui-icon-left"></span>
+		    </a>
+		    <div class="aui-title">app</div>
+		</header>
+		<section class="aui-content">
+	        <ul class="aui-list-view">
+	            <li class="aui-list-view-cell" url="jssdk/app/slider_drawer">
+	                <a class="aui-arrow-right">添加侧滑抽屉效果</a>
+	            </li>
+	            
+	        </ul>
+        </section>
+	</body>
+	<script src="../../common/co/native.js"></script>
+	<script src="../../common/co/dom.js"></script>
+	<script src="../../common/co/co.js"></script>
+    <script>
+
+        var win = app.createWindow();
+       	domReady(function(require){
+       		$(".aui-list-view > li").on("tap", function(event){
+				var url = $(this).attr("url");
+				win.open(''+url+'.html');
+			});
+			
+			// 返回上一层
+       		$("#back").on("tap",function(){
+				var view = app.currentView();
+				view.back();
+			})
+		});
+	   	
+	</script>
+</html>
