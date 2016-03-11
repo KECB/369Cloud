@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="../../../common/css/aui.css">
+		<title></title>
+		<style type="text/css">
+		.aui-content-padded {
+			margin-top: 20px;
+		}
+	    </style>
+	</head>
+	<body>
+		<header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
+		    <a class="aui-pull-left" id="back">
+		        <span class="aui-iconfont aui-icon-left"></span>
+		    </a>
+		    <div class="aui-title">Audio模块</div>
+		</header>
+		<section class="aui-content-padded">
+			audio模块用于提供音频的录制和播放功能，可调用系统的麦克风设备进行录音操作，也可调用系统的扬声器设备播放音频文件。
+		</section>
+		
+		<section class="aui-content-padded">
+			<div class="aui-btn aui-btn-primary" id="btn_alert_sample_5">音乐播放器(未完成版。只演示了播放暂停功能。)</div>
+		</section>
+	</body>
+	<script src="../../../common/co/native.js"></script>
+	<script src="../../../common/co/dom.js"></script>
+	<script src="../../../common/co/co.js"></script>
+	<script>
+		var win = app.createWindow();
+       	domReady(function(require){
+       		
+       		$("#btn_alert_sample_1").on("tap", function(){
+       			app.alert('弹出无回调函数单按钮对话框');
+       		});
+       		$("#btn_alert_sample_2").on("tap", function(){
+       			app.alert('弹出默认单按钮对话框', function() {
+					console.log('您点击了确定'); //按下
+				});
+       		});
+       		$("#btn_alert_sample_3").on("tap", function(){
+				app.alert('弹出带title单按钮对话框', 'title', function() {
+					console.log('您点击了确定'); //按下
+				});
+       		});
+       		$("#btn_alert_sample_4").on("tap", function(){
+       			app.alert('弹出带title,btnCaption单按钮对话框', 'title', 'btnCaption', function() {
+					console.log('您点击了确定'); //按下
+				});
+       		});
+       		$("#btn_alert_sample_5").on("tap", function(){
+				win.open('jssdk/app/audio_player.html');
+       		});
+       		
+			// 返回上一层
+       		$("#back").on("tap",function(){
+				var view = app.currentView();
+				view.back();
+			})
+		});
+		
+	</script>
+</html>

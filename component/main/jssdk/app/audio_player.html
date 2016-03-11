@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="../../../common/css/aui.css">
+		<title></title>
+		<style type="text/css">
+	    ul{
+			display: inline;
+			list-style-type:none;
+		}
+		.aui-content-padded {
+			margin-top: 20px;
+		}
+		.bar-bgcolor {
+			/*position: fixed;*/
+			top: 0;
+	        background: rgba(255,255,255,0);
+	        height:300px;
+	        color: #FFFFFF;
+		}
+		/*.aui-content { background: #ffffff; margin-bottom: 10px;}*/
+	    /*.aui-content.image { margin-bottom: 0; position: relative; height: 300px; padding-top: 45px; }
+*/
+		.music-list{
+			background: rgba(16, 15, 20, 0.84);
+		}
+		.aui-img-body{
+			color:rgba(226, 228, 227, 0.84);
+			font-weight: bold;
+		}
+		.aui-img-body p{
+			font-family: sans-serif;
+			font-weight: normal;
+		}
+		.vader{
+			border-radius: 2px;
+			display: block;
+			width: 0%;
+			box-shadow:0px 0px 10px 1px #FD4275, 0 0 1px #FD4275, 0 0 1px #FD4275, 0 0 1px #FD4275, 0 0 1px #FD4275, 0 0 1px #FD4275, 0 0 1px #FD4275;
+			background-color: #fff;
+		}
+		.barContro_space { 
+			margin: 2% 10%;	
+			background:rgba(203, 200, 203, 0.77);
+			border-radius: 5px;}
+	    </style>
+	</head>
+	<body>
+		<header id="head" class="aui-bar  bar-bgcolor" style="position:fixed;background:url('../../res/recovery.png') no-repeat ; background-position: center; background-size: cover;" id="aui-header">
+			<a class="aui-pull-left small-avatar" tapmode onclick="back()">
+				<span class="aui-iconfont aui-icon-left"></span>
+			</a>
+			<a class="aui-pull-right">
+				<span class="aui-iconfont aui-icon-like"></span>
+			</a>
+			
+			<div style="background: rgba(33, 14, 88, 0.3);height:100%">
+				<div style="padding-top:20%;font-size:30px;">Not Afraid</div>
+			    <div style="font-size:20px;height:20px">Eminem</div>
+				<div class="barContro_space" style="margin-top:25px">
+		    	    <span class="vader" style="height: 2px; width: 20%;" id="barvader"></span>
+		    	</div> 
+		    	<table style="width:80%;margin:0 auto;margin-top:15px">
+			    	<tr>
+			    	    <td style="width:33%;">
+			    	        <span class="aui-iconfont aui-icon-backwardfill"></span>
+			    	    </td>
+			    	    <td style="width:33%;">
+			    	        <span id="play" class="aui-iconfont aui-icon-playfill"></span>
+			    	    </td><td style="width:33%;">
+			    	        <span class="aui-iconfont aui-icon-forwardfill1"></span>
+			    	    </td>
+			    	</tr>   	
+		    	</table>
+		    	
+			</div>
+
+		</header>
+		<div id="musicList" class="aui-content" style="background: rgba(16, 15, 20, 0.84);">
+		    <ul class="aui-list-view">
+		        <li class="aui-list-view-cell aui-img" >
+		            <img class="aui-img-object aui-pull-left" src="../../res/recovery_album.jpg">
+		            <div class="aui-img-body">
+		                	Not Afraid
+		                <p>Eminem</p>
+		            </div>
+		        </li>
+		        <li class="aui-list-view-cell aui-img">
+		            <img class="aui-img-object aui-pull-left" src="../../res/taylorswift.jpg">
+		            <div class="aui-img-body">
+		                	Maid with the Flaxen Hair
+		                <p>Taylor Swift</p>
+		            </div>
+		        </li>
+		        <li class="aui-list-view-cell aui-img">
+		            <img class="aui-img-object aui-pull-left" src="../../res/taylorswift.jpg">
+		            <div class="aui-img-body">
+		                	Maid with the Flaxen Hair
+		                <p>Taylor Swift</p>
+		            </div>
+		        </li>
+		        <li class="aui-list-view-cell aui-img">
+		            <img class="aui-img-object aui-pull-left" src="../../res/taylorswift.jpg">
+		            <div class="aui-img-body">
+		                	Maid with the Flaxen Hair
+		                <p>Taylor Swift</p>
+		            </div>
+		        </li>
+		        <li class="aui-list-view-cell aui-img">
+		            <img class="aui-img-object aui-pull-left" src="../../res/taylorswift.jpg">
+		            <div class="aui-img-body">
+		                	Maid with the Flaxen Hair
+		                <p>Taylor Swift</p>
+		            </div>
+		        </li>
+		        <li class="aui-list-view-cell aui-img">
+		            <img class="aui-img-object aui-pull-left" src="../../res/taylorswift.jpg">
+		            <div class="aui-img-body">
+		                	Maid with the Flaxen Hair
+		                <p>Taylor Swift</p>
+		            </div>
+		        </li>
+		        <li class="aui-list-view-cell aui-img">
+		            <img class="aui-img-object aui-pull-left" src="../../res/taylorswift.jpg">
+		            <div class="aui-img-body">
+		                	Maid with the Flaxen Hair
+		                <p>Taylor Swift</p>
+		            </div>
+		        </li>
+		        <li class="aui-list-view-cell aui-img">
+		            <img class="aui-img-object aui-pull-left" src="../../res/taylorswift.jpg">
+		            <div class="aui-img-body">
+		                	Maid with the Flaxen Hair
+		                <p>Taylor Swift</p>
+		            </div>
+		        </li>
+		        
+		    </ul>
+		</div>
+	</body>
+	<script src="../../../common/co/native.js"></script>
+	<script src="../../../common/co/dom.js"></script>
+	<script src="../../../common/co/co.js"></script>
+	<script>
+		var baseUrl = 'cpt://res/';
+		var bodyHeight = parseInt($("body").css("height"));
+		$("#musicList").css("margin-top",parseInt($("#head").css("height")));
+		$("#musicList").css("height",bodyHeight-parseInt($("#head").css("height")));
+       	domReady(function(require){
+       		var url = "NotAfraid.m4a";
+			var myAudio = app.audio.createPlayer(baseUrl + url);
+//			myAudio.play();
+			var isFirstPlay = true;
+			$("#play").on("tap", function(){
+				if($("#play").attr("class").indexOf("playfill")>0){
+					isFirstPlay?myAudio.play():myAudio.resume();
+					myAudio.resume();
+					$("#play").attr("class", "aui-iconfont aui-icon-square");
+					isFirstPlay = false;
+				}else{
+					myAudio.pause();
+					$("#play").attr("class", "aui-iconfont aui-icon-playfill");
+				}
+
+			});
+			// 返回上一层
+       		$("#back").on("tap",function(){
+				var view = app.currentView();
+				view.back();
+			});
+		});
+		
+//		var startY = 0;
+//		
+//		document.getElementById("musicList").addEventListener('touchstart', function(event){
+//			startY = event.targetTouches[0].pageY;
+//		});
+//		document.getElementById("musicList").addEventListener('touchmove', function(event){
+//			var currentY = event.targetTouches[0].pageY;
+//			if(currentY > startY && parseInt($("#head").css("height"))<300){
+//				$("#head").css("height", parseInt($("#head").css("height")) + (currentY-startY));
+//			}else if(currentY < startY && parseInt($("#head").css("height"))>50){
+//				$("#head").css("height", parseInt($("#head").css("height")) - (startY-currentY));
+//			}
+//			
+//			console.log(event.targetTouches[0].pageY);
+//		});
+//		function updateTouches(event) { touches = event.touches; }
+//		document.addEventListener('touchmove', updateTouches);
+//		window.requestAnimationFrame(renderEverything);
+//		function renderEverything() {
+//		// TODO: Render code goes here. window.requestAnimationFrame(renderEverything);
+//			console.log('move'); 
+//		}
+//	 	var height = parseInt($("#head").css("height"));
+//		for(var i = 0; i < 10; i ++){
+//			setInterval(function () {
+//					$("#head").css("height", parseInt($("#head").css("height"))-1);
+//			}, 1000);
+//		}
+	
+	</script>
+</html>

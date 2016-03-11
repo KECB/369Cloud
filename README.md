@@ -6,6 +6,7 @@
 ![](doc/img/demo-accelerator.jpg "")
 ![](doc/img/demo-actionsheet.jpg "")
 ![](doc/img/demo-camera.jpg "")
+![](doc/img/demo-audio.png "")
 ####第一步计划，持续更新JS-SDK内容。
 
 扫码安装Demo:</br>

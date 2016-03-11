@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="../../common/co/css/co.css">
+		<title></title>
+		<style>
+		    
+		#deals {
+		  display: flex;        /* Flex layout so items have equal height  */
+		  flex-flow: row wrap;  /* Allow items to wrap into multiple lines */
+		}
+		.sale-item {
+		  display: flex;        /* Lay out each item using flex layout */
+		  flex-flow: column;    /* Lay out item’s contents vertically  */
+		}
+		.sale-item > img {
+		  order: -1;            /* Shift image before other content (in visual order) */
+		  align-self: center;   /* Center the image cross-wise (horizontally)         */
+		}
+		.sale-item > button {
+		  margin-top: auto;     /* Auto top margin pushes button to bottom */
+		}
+	</style>
+	</head>
+	<body>
+		<section id="deals">
+		  <section class="sale-item">
+		    <h1>Computer Starter Kit</h1>
+		    <p>This is the best computer money can buy, if you don’t have much money.
+		    <ul>
+		      <li>Computer
+		      <li>Monitor
+		      <li>Keyboard
+		      <li>Mouse
+		    </ul>
+		    <img src="images/computer.jpg"
+		         alt="You get: a white computer with matching peripherals.">
+		    <button>BUY NOW</button>
+		  </section>
+		  <section class="sale-item">
+		    <h1>Computer Starter Kit</h1>
+		    <p>This is the best computer money can buy, if you don’t have much money.
+		    <ul>
+		      <li>Computer
+		      <li>Monitor
+		      <li>Keyboard
+		      <li>Mouse
+		    </ul>
+		    <img src="images/computer.jpg"
+		         alt="You get: a white computer with matching peripherals.">
+		    <button>BUY NOW</button>
+		  </section>
+		  <section class="sale-item">
+		    <h1>Computer Starter Kit</h1>
+		    <p>This is the best computer money can buy, if you don’t have much money.
+		    <ul>
+		      <li>Computer
+		      <li>Monitor
+		      <li>Keyboard
+		      <li>Mouse
+		    </ul>
+		    <img src="images/computer.jpg"
+		         alt="You get: a white computer with matching peripherals.">
+		    <button>BUY NOW</button>
+		  </section>
+		</section>
+	</body>
+	<script src="../../common/co/native.js"></script>
+	<script src="../../common/co/dom.js"></script>
+	<script src="../../common/co/co.js"></script>
+</html>
